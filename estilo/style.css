@@ -1,0 +1,12 @@
+@charset "UTF-8";
+:root{
+    --cor0:#263140;
+    --cor1:#BF9169;
+    --cor2:#D9D8D7;
+    --cor3:#8C6249;
+    --cor4:#F2F2F2;
+}
+*{
+    padding: 0px;
+    margin: 0px;
+}
