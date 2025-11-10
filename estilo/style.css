@@ -8,6 +8,29 @@
   --destaque-inverso
   --fundo-card
 */
+/* ================================
+   TEMA ESCURO
+   ================================ */
+body.escuro {
+     --fundo:#424242;
+    --texto-r:#263140;
+    --texto:#D9D8D7;
+    --destaque-r:#462c1d;   
+    --destaque:#929292;
+    --fundo-card:rgb(0, 0, 0);
+}
+
+/* Ajustes de componentes no escuro */
+body.escuro header,
+body.escuro footer {
+    background-color: var(--destaque);
+    color: var(--texto-r);
+}
+
+body.escuro a {
+    color: var(--texto-r);
+}
+
 :root{
     --fundo:#b9b9b9;
     --texto:#263140;
@@ -36,6 +59,7 @@ body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     line-height: 1.5em;
     background-color:var(--fundo);
+    color: var(--texto);
 }
 menu ul{
     list-style-type: none;
@@ -78,6 +102,7 @@ menu a:hover::after {
 
 section#ficha{
     background-color: var(--fundo-card);
+    color: var(--texto);
     padding: 20px;
     border-radius: 8px;
     grid-column: 2;
