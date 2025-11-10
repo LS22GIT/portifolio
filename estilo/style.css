@@ -142,6 +142,18 @@ section#detalhes{
     border-radius: 4px;
 
 }
+#formacao-container .curso{
+    margin: 15px;
+    background-color: var(--fundo);
+    border-radius: 8px;
+    border-left: 5px solid var(--destaque-r);
+    padding-left: 15px;
+    transition: border-width 0.5s, border-color 0.5s;
+}
+#formacao-container .curso:hover{
+    border-left-width: 15px;
+    background-color: var(--destaque);
+}
 @media screen and (min-width:768px) {
     #skill-container{
         grid-template-columns: 1fr 1fr;
