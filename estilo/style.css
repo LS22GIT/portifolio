@@ -29,6 +29,8 @@ header{
     justify-content: flex-end;
     align-content: center;
     font-weight: bold;
+    position: sticky;
+    top: 0;
 }
 body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
@@ -51,6 +53,29 @@ menu a:hover{
     color: var(--texto);
     background-color: var(--destaque-r);
 }
+menu a {
+    position: relative;
+}
+menu a::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: -35px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 6px 10px;
+    background-color: var(--destaque-r);
+    color: var(--texto);
+    font-size: 0.8em;
+    border-radius: 5px;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+menu a:hover::after {
+    opacity: 1;
+}
+
 section#ficha{
     background-color: var(--fundo-card);
     padding: 20px;
@@ -154,9 +179,60 @@ section#detalhes{
     border-left-width: 15px;
     background-color: var(--destaque);
 }
+#projeto-container .projeto{
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background-color: var(--fundo);
+    padding: 10px;
+    border-radius: 10px;
+    border-left: 5px solid var(--destaque-r);
+    transition: border-color 0.5s,border 0.5s;
+}
+#projeto-container .projeto:hover{
+    border-color: var(--destaque);
+    border-left-width: 15px;
+    cursor: pointer;
+
+}
+#projeto-container .foto{
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+    overflow: hidden;
+    border-radius: 8px;
+}
+footer{
+    background-color: var(--destaque);
+    color: var(--texto-r);
+    text-align: center;
+    padding: 15px;
+}
+footer a {
+    color: var(--texto-r);
+    text-decoration: none;
+    font-weight: bold;
+}
+footer a:hover{
+    color: var(--destaque-r);
+}
 @media screen and (min-width:768px) {
     #skill-container{
         grid-template-columns: 1fr 1fr;
+    }
+    #projeto-container .projeto{
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+    #projeto-container .projeto-info{
+        max-width: 80%;
+    }
+    #projeto-container .foto{
+        aspect-ratio: 1/1;
+        max-width: 20%;
+        max-height: 200px;
+        
     }
     
 }
